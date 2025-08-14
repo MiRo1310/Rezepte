@@ -1,6 +1,10 @@
-﻿namespace Rezepte.Models;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
-public class RecipeHeaderProducts
+namespace Rezepte.Models;
+
+[Table("recipesHeaders")]
+
+public class RecipeHeader
 {
     public Guid Id { get; set; }
     
@@ -12,7 +16,7 @@ public class RecipeHeaderProducts
     
     public DateTime CreatedAt { get; set; }
     
-    public DateTime ModifiedAt { get; set; }
+    public DateTime? ModifiedAt { get; set; }
     
-    public RecipeProduct RecipeProduct { get; set; }
+    public Recipe Recipe { get; set; }
 }
